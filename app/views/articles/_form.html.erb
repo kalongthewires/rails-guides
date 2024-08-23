@@ -1,0 +1,22 @@
+<%# uses article instead of @article because the partial is shared
+and shouldn't depend on a specific instance variable set in a specific
+controller; should be broadly reusable %>
+<%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+    <%= article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
