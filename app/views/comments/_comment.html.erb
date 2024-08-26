@@ -1,2 +1,5 @@
 <h3><%= comment.commenter %></h3>
 <div><%= comment.body %></div>
+<%= button_to 'Delete comment', [comment.article, comment],
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>

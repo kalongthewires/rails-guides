@@ -4,7 +4,7 @@ class Article < ApplicationRecord
   # ActiveRecord automatically declares attributes for every column
   # in the table so they don't have to be specified here
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   # validations are checked before the model is saved
   validates :title, presence: true
