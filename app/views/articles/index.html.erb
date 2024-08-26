@@ -1,11 +1,16 @@
 <h1>Hello Rails</h1>
+
+<p>Our blog has <%= Article.public_count %> posts and counting!</p>
+
 <% @articles.each do |article| %>
-  <article>
-    <h2>
-      <%= link_to article.title, article %>
-    </h2>
-    <%= article.body %>
-  </article>
+  <% unless article.archived? %>
+    <article>
+      <h2>
+        <%= link_to article.title, article %>
+      </h2>
+      <%= article.body %>
+    </article>
+  <% end %>
 <% end %>
 
 <%= link_to "New Article", new_article_path %>

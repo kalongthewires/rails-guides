@@ -18,5 +18,10 @@ controller; should be broadly reusable %>
     <% end %>
   </div>
 
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  </div>
+
   <%= form.submit %>
 <% end %>

@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  include Visible
+
   # ActiveRecord automatically declares attributes for every column
   # in the table so they don't have to be specified here
 

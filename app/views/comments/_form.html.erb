@@ -3,9 +3,16 @@
     <%= form.label :commenter %>
     <%= form.text_field :commenter %>
   </div>
+
   <div>
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  </div>
+
   <%= form.submit %>
 <% end %>
